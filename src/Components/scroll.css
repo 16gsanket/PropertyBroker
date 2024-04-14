@@ -1,0 +1,10 @@
+.custom-scrollbar::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show scrollbar on hover */
+.custom-scrollbar:hover::-webkit-scrollbar {
+    width: 0.5px;  /* Optional: show scrollbar space */
+    background: rgb(105, 105, 105);  /* Optional: just make scrollbar invisible */
+}
