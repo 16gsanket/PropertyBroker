@@ -31,7 +31,7 @@ function Flat({ flat }) {
           </div>
         </div>
 
-        <div className="w-full md:w-16 h-fit  flex align-center justify-end items-center  ">
+        <div className="w-full md:w-16 h-full  flex align-center justify-end items-center  ">
           <h3>$ {flat.price}</h3>
         </div>
       </div>
