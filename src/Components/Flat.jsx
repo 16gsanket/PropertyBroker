@@ -1,9 +1,14 @@
 import { MdOutlineBedroomParent } from "react-icons/md";
 import { FaRulerCombined } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 function Flat({ flat }) {
+  const flat_id = flat.id;
   return (
+    <NavLink to={`flat/${flat.id}`}>
+
+   
     <div className="h-60 w-full bg-stone-50 py-1 flex align-middle justify-center items-center rounded-3xl overflow-hidden">
       <img src={flat.image} alt="" className="h-5/6 w-5/12 rounded-lg" />
       <div className="  h-5/6 w-7/12   p-1 flex flex-col justify-between md:flex-row md:gap-3 ">
@@ -36,6 +41,7 @@ function Flat({ flat }) {
         </div>
       </div>
     </div>
+    </NavLink>
   );
 }
 
