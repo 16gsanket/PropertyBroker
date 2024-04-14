@@ -1,12 +1,14 @@
 import { MdOutlineBedroomParent } from "react-icons/md";
 import { FaRulerCombined } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
+import Button from "./Button";
 
 function Flat({ flat }) {
   const flat_id = flat.id;
+ 
   return (
-    <NavLink to={`flat/${flat.id}`}>
+    <NavLink to={`/flat/${flat.id}`}>
 
    
     <div className="h-60 w-full bg-stone-50 py-1 flex align-middle justify-center items-center rounded-3xl overflow-hidden">
@@ -37,6 +39,7 @@ function Flat({ flat }) {
         </div>
 
         <div className="w-full md:w-16 h-full  flex align-center justify-end items-center  ">
+          {/* <Button type='primary'>{flat.price}</Button> */}
           <h3>$ {flat.price}</h3>
         </div>
       </div>

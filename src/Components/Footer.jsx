@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 function Footer() {
   return (
     <div className="h-[50dvh] w-full bg-stone-100 relative">
@@ -5,7 +7,8 @@ function Footer() {
         <div className="h-full w-full flex  align-middle justify-between items-center ">
           <div className="h-full w-7/12  flex flex-col align-middle justify-center items-center">
             <h2>Subscribe to Our NewsLetter</h2>
-            <button>Subscribe</button>
+            <Button type='primary'>Subscribe</Button>
+            {/* <button>Subscribe</button> */}
           </div>
           <div className="h-full w-5/12 flex align-middle justify-center items-center">
             <ul>

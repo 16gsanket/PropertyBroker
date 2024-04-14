@@ -4,7 +4,7 @@ import Footer from "../Components/Footer"
 
 function Applayout() {
     return (
-        <div className="bg-stone-100">
+        <div className="bg-stone-100 h-auto">
              <Navbar />
              <Outlet />
              <Footer />

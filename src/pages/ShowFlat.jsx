@@ -1,4 +1,8 @@
+import { useParams } from "react-router-dom";
+
 function ShowFlat() {
+    let { id } = useParams();
+    console.log(id)
     return (
         <div className="h-auto w-full bg-stone-100">
             <div className="md:h-[60vh] sm:h-[50vh] w-11/12 h-[70vh] rounded-3xl bg-stone-300 mx-auto my-1"></div>
