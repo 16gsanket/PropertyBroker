@@ -1,5 +1,13 @@
 import Filters from "../Components/Filters"
 import Flat from "../Components/Flat"
+import {
+    MapContainer,
+    TileLayer,
+    Popup,
+    Marker,
+    useMap,
+    useMapEvent,
+  } from "react-leaflet";
 
 const FLAT_DEMO=[
     {image:'/home/testime.jpg', Name:'3 rooms, modern Appartment' , price:'23000' , location:'Kalpak Vihar Wadala, near Dominos ', id:'1'},
@@ -13,6 +21,7 @@ const FLAT_DEMO=[
 ]
 
 function Appartments() {
+    const position = [19.0760, 72.8777];
     return (
         <>
             <Filters />
@@ -24,7 +33,22 @@ function Appartments() {
                 return <Flat flat={flat}/>
             })}
         </div>
-        <div className=" sm:h-screen sm:w-4/12 bg-green-300"></div>
+        <div className=" sm:h-screen sm:w-4/12 bg-green-300 overflow-hidden">
+        
+      <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
+        <TileLayer
+          attribution='&copy;  <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+        />
+        <Marker position={position}>
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+      </MapContainer>
+  
+
+        </div>
             
         </div>
         </>

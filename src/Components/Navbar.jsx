@@ -16,11 +16,11 @@ function Navbar() {
       <div className="flex align-middle items-center justify-center text-xl w-5/12  gap-5 ">
         <NavLink to='/'>
           <div>
-            <HiOutlineHome className="hover:text-2xl transition-all duration-250 " />
+            <HiOutlineHome className="hover:text-2xl transition-all duration-250 active:text-2xl" />
           </div>
         </NavLink>
         <NavLink to="/appartments">
-          <div>
+          <div className="active:text-2xl" >
             <HiBuildingOffice2 className="hover:text-2xl transition-all duration-250 " />
           </div>
         </NavLink>
