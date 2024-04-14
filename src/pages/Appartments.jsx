@@ -1,3 +1,4 @@
+import Filters from "../Components/Filters"
 import Flat from "../Components/Flat"
 
 const FLAT_DEMO=[
@@ -13,6 +14,8 @@ const FLAT_DEMO=[
 
 function Appartments() {
     return (
+        <>
+            <Filters />
         <div className="h-auto w-full bg-stone-100 flex align-middle justify-around items-center">
 
 
@@ -24,6 +27,7 @@ function Appartments() {
         <div className=" sm:h-screen sm:w-4/12 bg-green-300"></div>
             
         </div>
+        </>
     )
 }
 

@@ -25,12 +25,16 @@ function Navbar() {
           </div>
         </NavLink>
         {/* <div><HiSearchCircle className="hover:text-2xl transition-all duration-250 "/></div> */}
+        <NavLink to="/fillform">
         <div>
           <HiMailOpen className="hover:text-2xl transition-all duration-250 " />
         </div>
+        </NavLink>
+
         <div>
           <HiOutlineHeart className="hover:text-2xl transition-all duration-250 " />
         </div>
+
       </div>
 
       <div className="border border-stone-400 rounded-full p-1">
