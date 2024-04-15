@@ -6,8 +6,20 @@ import Button from "./Button";
 
 function Flat({ flat }) {
   const flat_id = flat.id;
+
+  if(!flat){
+    return (
+      <div>
+        <h1>
+
+        No current flats
+        </h1>
+        </div>
+    )
+  }
  
   return (
+     
     <NavLink to={`/flat/${flat.id}`}>
 
    

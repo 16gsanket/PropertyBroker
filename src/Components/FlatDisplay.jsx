@@ -22,6 +22,7 @@ function FlatDisplay({ actiononroom , roomtype }) {
             {FLAT_DEMO.map(flat=>
                 
                 flat.for === actiononroom && flat.type === roomtype && <Flat flat={flat}/>
+
             )}
         </div>
     )
