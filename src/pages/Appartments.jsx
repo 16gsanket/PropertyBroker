@@ -1,23 +1,9 @@
-
 import Filters from "../Components/Filters";
 import Flat from "../Components/Flat";
-
-import { useEffect } from "react";
-import Filters from "../Components/Filters";
-import Flat from "../Components/Flat";
-import Maps1 from "../Components/Maps_Attemps/Maps1"
-
 import { apiRooms } from "../services/apiRooms";
+import { useEffect, useState } from "react";
 
-
-import {
-  MapContainer,
-  TileLayer,
-  Popup,
-  Marker,
-  useMap,
-  useMapEvent,
-} from "react-leaflet";
+import Maps1 from "../Components/Maps_Attemps/Maps1";
 
 const FLAT_DEMO = [
   {
@@ -79,19 +65,30 @@ const FLAT_DEMO = [
 ];
 
 function Appartments() {
+
+  const[flats , setFlats] = useState([]);
+
+
+  useEffect(function () {
+    apiRooms().then((data) => setFlats(data) );
+
+  }, []);
+
   const position = [19.076, 72.8777];
+  
   return (
     <>
       <Filters />
       <div className="h-auto w-full bg-stone-100 sm:flex align-middle justify-around items-center">
+
         <div className="bg-transparent h-screen sm:w-7/12 w-11/12 px-2 py-2 flex flex-col gap-2 overflow-y-scroll custom-scrollbar">
-          {FLAT_DEMO.map((flat) => {
+          {flats?.map((flat) => {
             return <Flat flat={flat} />;
           })}
         </div>
+
+
         <div className=" sm:h-screen sm:w-4/12 bg-green-300 overflow-hidden">
-
-
           <Maps1 />
         </div>
       </div>

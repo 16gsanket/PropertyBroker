@@ -6,7 +6,7 @@ import Maps1 from "./Maps_Attemps/Maps1";
 function Main() {
  
   return (
-    <div className="h-screen w-11/12  mx-auto rounded-3xl relative top-[-8rem] flex justify-around">
+    <div className="h-screen w-11/12  mx-auto rounded-3xl relative sm:top-[-8rem] top-[-9rem] flex justify-around">
       <Flats />
       <Maps />
       {/* <Maps1 /> */}

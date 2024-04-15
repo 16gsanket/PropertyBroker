@@ -27,11 +27,17 @@ function Filters({actiononroom , handleactiononroom, roomtype , setRoomType}) {
         onChange={e=>setRoomType(e.target.value)}
         className="bg-[#7c82cf] py-2 px-3 rounded-xl text-white hover:bg-indigo-500"
       >
-        <option value="appartment" className="bg-[#8d94eb] ">
-          Type : Appartment
+        <option value="1BHK" className="bg-[#8d94eb] ">
+          Type : 1 BHK
         </option>
-        <option value="pg" className="bg-[#8d94eb] ">
-          Type : Pg
+        <option value="2BHK" className="bg-[#8d94eb] ">
+          Type : 2 BHK
+        </option>
+        <option value="3BHK" className="bg-[#8d94eb] ">
+          Type : 3 BHK
+        </option>
+        <option value="4BHK" className="bg-[#8d94eb] ">
+          Type : 4 BHK
         </option>
         
       </select>
