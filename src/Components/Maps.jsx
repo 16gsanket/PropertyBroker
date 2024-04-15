@@ -2,7 +2,7 @@
 // className="h-full w-4/12 bg-stone-200 rounded-3xl md:inline hidden"
 
 import "leaflet/dist/leaflet.css"
-
+import Maps1 from "./Maps_Attemps/Maps1"
 import {
   MapContainer,
   TileLayer,
@@ -16,17 +16,7 @@ function Maps() {
   const position = [19.0760, 72.8777];
   return (
     <div className="h-full w-4/12 bg-stone-200 rounded-3xl md:inline hidden overflow-hidden">
-      <MapContainer center={position} zoom={11} scrollWheelZoom={true} className="h-full w-full">
-        <TileLayer
-          attribution='&copy;  <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
-        />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </MapContainer>
+      <Maps1 />
     </div>
   );
 }

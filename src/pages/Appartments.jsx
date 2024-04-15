@@ -1,5 +1,15 @@
+
 import Filters from "../Components/Filters";
 import Flat from "../Components/Flat";
+
+import { useEffect } from "react";
+import Filters from "../Components/Filters";
+import Flat from "../Components/Flat";
+import Maps1 from "../Components/Maps_Attemps/Maps1"
+
+import { apiRooms } from "../services/apiRooms";
+
+
 import {
   MapContainer,
   TileLayer,
@@ -80,17 +90,9 @@ function Appartments() {
           })}
         </div>
         <div className=" sm:h-screen sm:w-4/12 bg-green-300 overflow-hidden">
-          <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
-            <TileLayer
-              attribution='&copy;  <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
-            />
-            <Marker position={position}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
-          </MapContainer>
+
+
+          <Maps1 />
         </div>
       </div>
     </>
