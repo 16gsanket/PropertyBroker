@@ -22,4 +22,6 @@ function Banner() {
   );
 }
 
+//This si the Updated line to check form desktop to laptop
+
 export default Banner;
