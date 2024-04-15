@@ -1,5 +1,6 @@
 import Banner from "../Components/Banner"
 import Footer from "../Components/Footer"
+import Gmaps from "../Components/Gmaps"
 import HowWeServe from "../Components/How-We-Serve"
 import Main from "../Components/Main"
 
@@ -10,6 +11,7 @@ function Home() {
            
             <Banner />
             <Main />
+            
             <HowWeServe />
             
 
