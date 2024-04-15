@@ -14,9 +14,7 @@ function Filters({actiononroom , handleactiononroom, roomtype , setRoomType}) {
         <option value="rent" className="bg-[#8d94eb] ">
           For Rent
         </option>
-        <option value="buy" className="bg-[#8d94eb] ">
-          Buy
-        </option>
+
       </select>
 
 

@@ -4,7 +4,7 @@ import FlatDisplay from "./FlatDisplay"
 
 function Flats() {
     const [actiononroom , setactiononroom] = useState('sale');
-    const [roomtype , setRoomType] = useState('appartment');
+    const [roomtype , setRoomType] = useState('1BHK');
 
 
     function handleactiononroom(v){

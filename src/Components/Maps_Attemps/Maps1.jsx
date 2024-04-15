@@ -45,7 +45,7 @@ function Maps() {
 
         <MarkerClusterGroup
           chunkedLoading
-        //   iconCreateFunction={createCustomClusterIcon}
+          //   iconCreateFunction={createCustomClusterIcon}
         >
           {marker.map((marker) => {
             return (
