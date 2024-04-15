@@ -78,7 +78,9 @@ function Appartments() {
   useEffect(function(){
     apiRooms().then((data)=>console.log(data))
   },[])
+
   const position = [19.076, 72.8777];
+  
   return (
     <>
       <Filters />
