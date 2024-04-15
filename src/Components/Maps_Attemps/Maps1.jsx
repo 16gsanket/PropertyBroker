@@ -31,7 +31,7 @@ function Maps() {
 
   const position = [19.076, 72.8777];
   return (
-    <div className="h-full w-4/12 bg-stone-200 rounded-3xl md:inline hidden overflow-hidden">
+    <div className="h-full w-full ">
       <MapContainer
         center={position}
         zoom={11}

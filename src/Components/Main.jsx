@@ -8,9 +8,9 @@ function Main() {
   return (
     <div className="h-screen w-11/12  mx-auto rounded-3xl relative top-[-8rem] flex justify-around">
       <Flats />
-      {/* <Maps /> */}
-      <Maps1 />
-      {/* < Gmaps /> */}
+      <Maps />
+      {/* <Maps1 /> */}
+      
     </div>
   );
 }
