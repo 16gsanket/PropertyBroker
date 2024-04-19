@@ -6,17 +6,11 @@ import './scroll.css'
 
 function FlatDisplay({ actiononroom , roomtype }) {
 
-    
   const[flats , setFlats] = useState([]);
-
 
   useEffect(function () {
     apiRooms().then((data) => setFlats(data) );
-
   }, []);
-
-  
-
 
     return (
         <div className="bg-transparent h-auto w-full px-2 py-2 flex flex-col gap-2 overflow-y-scroll custom-scrollbar">
@@ -25,7 +19,7 @@ function FlatDisplay({ actiononroom , roomtype }) {
                 flat.roomFor === actiononroom && flat.roomType === roomtype && <Flat flat={flat}/>
 
             )}
-            <h2 className="text-center text-indigo-700">No More Results</h2>
+            <h2 className="text-center text-indigo-700 dark:text-yellow-600">No More Results</h2>
         </div>
     )
 }
