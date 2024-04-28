@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 
 import Maps1 from "../Components/Maps_Attemps/Maps1";
 
-const FLAT_DEMO = [
+
+/*const FLAT_DEMO = [
   {
     image: "/home/testime.jpg",
     Name: "3 rooms, modern Appartment",
@@ -62,16 +63,14 @@ const FLAT_DEMO = [
     location: "Kalpak Vihar Wadala, near Dominos ",
     id: "8",
   },
-];
+];*/
 
 function Appartments() {
 
   const[flats , setFlats] = useState([]);
 
-
   useEffect(function () {
     apiRooms().then((data) => setFlats(data) );
-
   }, []);
 
   const position = [19.076, 72.8777];
