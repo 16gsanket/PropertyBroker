@@ -11,12 +11,20 @@ import {
   useMap,
   useMapEvent,
 } from "react-leaflet";
+import { useEffect, useState } from "react";
+import { apiRooms } from "../services/apiRooms";
+
 
 function Maps() {
+  const[data , setData] = useState();
+
+  useEffect(function(){
+    apiRooms().then(rooms=>setData(rooms))
+  },[])
   const position = [19.0760, 72.8777];
   return (
     <div className="h-full w-4/12 bg-stone-200 rounded-3xl md:inline hidden overflow-hidden">
-      <Maps1 />
+      <Maps1 data={data}/>
     </div>
   );
 }

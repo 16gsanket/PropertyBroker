@@ -5,13 +5,12 @@ import HowWeServe from "../Components/How-We-Serve"
 import Main from "../Components/Main"
 
 
-function Home() {
+function Home({nightMode}) {
     return (
-        <div className="h-auto w-full bg-stone-100 relative ">
+        <div className="h-auto w-full bg-stone-100 relative dark:bg-stone-950">
            
-            <Banner />
+            <Banner nightMode={nightMode}/>
             <Main />
-            
             <HowWeServe />
             
 

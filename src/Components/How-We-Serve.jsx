@@ -2,7 +2,7 @@ const stations = ["Mumbai" , "Mumbai Subarban" , "Sobo" , "Thane" , "Mulund" , "
 
 function HowWeServe() {
     return (
-        <div className=" w-full h-[auto] flex flex-col gap-8  pb-5">
+        <div className=" w-full h-[auto] flex flex-col gap-8  pb-5 mb-10">
             <h2 className="text-3xl font-bold text-blue-800 text-center "> Our Locations</h2>
 
             <div className="flex gap-10 flex-wrap align-middle justify-center items-center">

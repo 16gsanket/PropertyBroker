@@ -10,7 +10,7 @@ import {
   useMapEvent,
 } from "react-leaflet";
 
-function Maps() {
+function Maps({data}) {
   const marker = [
     { geocode: [19.2183, 72.9781], popUp: "Hello i am pop 1" },
     { geocode: [19.001, 72.8397], popUp: "Hello i am pop 2" },
@@ -30,6 +30,7 @@ function Maps() {
   }
 
   const position = [19.076, 72.8777];
+ 
   return (
     <div className="h-full w-full ">
       <MapContainer
@@ -47,11 +48,11 @@ function Maps() {
           chunkedLoading
           //   iconCreateFunction={createCustomClusterIcon}
         >
-          {marker.map((marker) => {
+          {data?.map((data) => {
             return (
-              <Marker position={marker.geocode} icon={customIcon}>
+              <Marker position={data.geocode} icon={customIcon}>
                 <Popup>
-                  <h3>{marker.popUp}</h3>
+                  {/* <h3>{marker.popUp}</h3> */}
                 </Popup>
               </Marker>
             );

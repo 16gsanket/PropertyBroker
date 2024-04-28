@@ -1,10 +1,10 @@
-function Banner() {
+function Banner({nightMode}) {
   return (
     <div
       style={{
-        backgroundImage: `url("/home/himg1.jpg")`,
+        backgroundImage:  !nightMode ? 'url("/home/himg1.jpg")' : 'url("/home/himg4.jpg")',
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: !nightMode ? "center" : "bottom",
       }}
       className="h-[40vh] w-11/12 bg-stone-700 mx-auto overflow-hidden rounded-3xl relative "
     >
@@ -21,5 +21,7 @@ function Banner() {
     </div>
   );
 }
+
+//This si the Updated line to check form desktop to laptop
 
 export default Banner;

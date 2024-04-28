@@ -6,14 +6,35 @@ import Applayout from "./ui/Applayout";
 import Pagenotfound from "./pages/Pagenotfound";
 import ShowFlat from "./pages/ShowFlat";
 import Fillform from "./pages/Fillform";
+import { useEffect, useState } from "react";
 
 function App() {
+
+
+  const [nightMode, setNightMode] = useState(false);
+
+  useEffect(()=>{
+    if(nightMode){
+      document.documentElement.classList.add("dark");
+    }else{
+      document.documentElement.classList.remove("dark");
+    }
+  },[nightMode])
+
+  function handle_night_mode() {
+    console.log('previous state ',nightMode );
+    setNightMode((n) => !n);
+    console.log('current state ',nightMode );
+
+  }
+
+
   const router = createBrowserRouter([
     {
-      element: <Applayout />,
+      element: <Applayout nightMode={nightMode} handle_night_mode={handle_night_mode} />,
 
       children: [
-        { path: "/", element: <Home /> },
+        { path: "/", element: <Home nightMode={nightMode}/> },
 
         { path: "/appartments", element: <Appartments /> },
         { path: "/flat/:id", element: <ShowFlat /> },
@@ -23,8 +44,16 @@ function App() {
     },
   ]);
 
+
+ 
+
+
   return (
     // <main className='h-screen w-full bg-stone-50'>
+
+
+
+
 
     <RouterProvider router={router} />
 

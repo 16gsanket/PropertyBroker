@@ -25,13 +25,13 @@ function Flat({ flat }) {
     <NavLink to={`/flat/${flat.id}`}>
 
    
-    <div className="h-fit w-full bg-stone-50  flex align-middle justify-center items-center rounded-3xl overflow-hidden px-2 py-2">
+    <div className="h-fit w-full bg-stone-50  flex align-middle justify-center items-center rounded-3xl overflow-hidden px-2 py-2 dark:bg-stone-950">
       <img src={!flat.image && '/home/testime.jpg'} alt="" className="h-5/6 w-5/12 rounded-lg" />
       <div className="  h-5/6 w-7/12   p-1 flex flex-col justify-between md:flex-row md:gap-3 ">
         <div className=" flex flex-col align-middle justify-around ">
           <div>
-            <h2 className="text-lg text-stone-900 font-semibold hover:text-indigo-600 hover:cursor-pointer">{title}</h2>
-            <h3 className="text-md text-stone-600 flex items-center">
+            <h2 className="text-lg text-stone-900 font-semibold hover:text-indigo-600 hover:cursor-pointer dark:text-stone-300">{title}</h2>
+            <h3 className="text-md text-stone-600 flex items-center dark:text-stone-400">
               <span>
                 <FaLocationDot />
               </span>
@@ -54,7 +54,7 @@ function Flat({ flat }) {
 
         <div className="w-full md:w-16 h-full  flex align-center justify-end items-center  ">
           {/* <Button type='primary'>{flat.price}</Button> */}
-          <h3>₹{price}lakh</h3>
+          <h3 className="dark:text-yellow-500">₹{price}lakh</h3>
         </div>
       </div>
     </div>
