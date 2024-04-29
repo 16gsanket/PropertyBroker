@@ -51,7 +51,7 @@ function Maps({ data }) {
         > */}
         {data?.map((data) => {
           return (
-            <Marker position={data.geocode} icon={customIcon}>
+            <Marker position={data.geocode} icon={customIcon} key={data.id}>
               <Popup><h3>{data.price}</h3></Popup>
             </Marker>
           );
