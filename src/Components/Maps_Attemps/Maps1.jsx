@@ -10,7 +10,7 @@ import {
   useMapEvent,
 } from "react-leaflet";
 
-function Maps({data}) {
+function Maps({ data }) {
   const marker = [
     { geocode: [19.2183, 72.9781], popUp: "Hello i am pop 1" },
     { geocode: [19.001, 72.8397], popUp: "Hello i am pop 2" },
@@ -21,16 +21,16 @@ function Maps({data}) {
     iconUrl: "https://cdn-icons-png.flaticon.com/128/14624/14624716.png",
     iconSize: [38, 38],
   });
-
+  /*
   function createCustomClusterIcon(cluster) {
     return new divIcon({
       html: `<div className="cluster-icon">${cluster.getChildCount()}</div>`,
       iconSize: [20, 20, true],
     });
-  }
+  }*/
 
   const position = [19.076, 72.8777];
- 
+
   return (
     <div className="h-full w-full ">
       <MapContainer
@@ -44,20 +44,19 @@ function Maps({data}) {
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
 
-        <MarkerClusterGroup
+        {/* enable this cluster marker to cluster up the icons .. */}
+        {/*   <MarkerClusterGroup
           chunkedLoading
           //   iconCreateFunction={createCustomClusterIcon}
-        >
-          {data?.map((data) => {
-            return (
-              <Marker position={data.geocode} icon={customIcon}>
-                <Popup>
-                  {/* <h3>{marker.popUp}</h3> */}
-                </Popup>
-              </Marker>
-            );
-          })}
-        </MarkerClusterGroup>
+        > */}
+        {data?.map((data) => {
+          return (
+            <Marker position={data.geocode} icon={customIcon}>
+              <Popup><h3>{data.price}</h3></Popup>
+            </Marker>
+          );
+        })}
+        {/* </MarkerClusterGroup> */}
       </MapContainer>
     </div>
   );
