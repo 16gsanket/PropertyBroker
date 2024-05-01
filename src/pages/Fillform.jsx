@@ -3,28 +3,34 @@ import {useForm} from "react-hook-form"
 import { Form } from "react-router-dom";
 import Button from "../Components/Button";
 import { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addRoom } from "../services/apiRooms";
 import toast from "react-hot-toast";
 
 
 function Fillform() {
-const[parking,setParking]= useState("no")
-const [roomtype , setroomtype] = useState("1BHK")
-const [roomfor , setroomfor] = useState("rent")
+const[parking,setParking]= useState(null)
+const [roomtype , setroomtype] = useState(null)
+const [roomfor , setroomfor] = useState(null)
 const{ register , reset , handleSubmit }=useForm()
+
+    const queryClient = useQueryClient();
 
 
         const{isLoading:isAdding , mutate} = useMutation({
             mutationFn:addRoom,
             onSuccess:()=>{
                 toast.success("added successfuly")
+                queryClient.invalidateQueries({
+                    queryKey:['flats']
+                })
                 reset();
             },
             onError:(err)=>toast.error(err)
         })
     
     function onSubmit(data){
+        console.log(data);
         mutate(data)
     }
     return (
@@ -34,17 +40,17 @@ const{ register , reset , handleSubmit }=useForm()
                 <input type="text" placeholder="Title" className="py-1 px-4 rounded-lg " {...register("title")}/>
                 <input type="text" placeholder="Description" className="py-1 px-4 rounded-lg " {...register("description")}/>
                 <input type="text" placeholder="Images" className="py-1 px-4 rounded-lg "  {...register("images")}/>
-                <input type="text" placeholder="Price" className="py-1 px-4 rounded-lg "  {...register("price")}/>
-                <input type="text" placeholder="area in sqmtr" className="py-1 px-4 rounded-lg "  {...register("area")}/>
+                <input type="number" placeholder="Price" className="py-1 px-4 rounded-lg "  {...register("price")}/>
+                <input type="number" placeholder="area in sqmtr" className="py-1 px-4 rounded-lg "  {...register("area")}/>
                 <input type="text" placeholder="address" className="py-1 px-4 rounded-lg "  {...register("address")}/>
                 <input type="text" placeholder="locality" className="py-1 px-4 rounded-lg "  {...register("locality")}/>
-                <input type="text" placeholder="pincode" className="py-1 px-4 rounded-lg "  {...register("pincode")}/>
-                <input type="text" placeholder="floorNumber" className="py-1 px-4 rounded-lg "  {...register("floorNumber")}/>
+                <input type="number" placeholder="pincode" className="py-1 px-4 rounded-lg "  {...register("pincode")}/>
+                <input type="number" placeholder="floorNumber" className="py-1 px-4 rounded-lg "  {...register("floorNumber")}/>
             <>
                 <label htmlFor="">parking</label>
                 <select name="parking" id="parking" value={parking} onChange={(e)=>setParking(e.target.value)}  {...register("parking")}>
-                    <option value="no">no</option>
-                    <option value="yes">yes</option>
+                    <option value="FALSE">no</option>
+                    <option value="TRUE">yes</option>
                 </select>
             </>
                 <>

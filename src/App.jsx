@@ -52,7 +52,7 @@ function App() {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        staleTimer: 10 * 600,
+        staleTimer: 100 * 600,
       },
     },
   });
