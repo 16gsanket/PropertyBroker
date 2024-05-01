@@ -11,17 +11,17 @@ export async function apiRooms() {
    return Rooms;
 }
 
-export async function addRoom(room){
-  const { data, error } = await supabase
-    .from('Rooms')
-    .insert([
-      room
-    ])
-    .select()
+export async function addRoom(newRoom){
+ 
+const { data, error } = await supabase
+.from('Rooms')
+.insert([newRoom])
+.select()
 
-    // if (error) {
-    //   throw new Error("Cannot delete the Cabin");
-    // } 
+    if (error) {
+      console.log(error)
+      throw new Error("Cannot Add the Flat");
+    } 
 
 }
 
