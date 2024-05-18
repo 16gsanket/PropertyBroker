@@ -27,17 +27,14 @@ const{ register , reset , handleSubmit }=useForm()
             },
             onError:(err)=>toast.error(err.message)
         })
-    
 
     function onSubmit(data){
-       
 
         const geocode = JSON.parse(data.geocode);
 
         // Replace the 'geocode' field in 'data' with the parsed array
         const newData = { ...data, geocode };
 
-        
         //passing new data to it
         mutate(newData)
     }
