@@ -7,8 +7,6 @@ import './scroll.css'
 function FlatDisplay({ actiononroom , roomtype  , flats_for_display}) {
   const flats = flats_for_display
 
-
-
     return (
         <div className="bg-transparent h-auto w-full px-2 py-2 flex flex-col gap-2 overflow-y-scroll custom-scrollbar">
             {flats?.map(flat=>

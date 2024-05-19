@@ -15,13 +15,13 @@ import { useEffect, useState } from "react";
 import { apiRooms } from "../services/apiRooms";
 
 
-function Maps({flats}) {
+function Maps({ flats , filteredFlats }) {
   const data = flats;
 
   const position = [19.0760, 72.8777];
   return (
     <div className="h-full w-4/12 bg-stone-200 rounded-3xl md:inline hidden overflow-hidden">
-      <Maps1 data={data}/>
+      <Maps1 data={data} filteredFlats={filteredFlats}/>
     </div>
   );
 }
