@@ -6,10 +6,7 @@ function Flats({ flats, setSettingSetFilteredFlatss }) {
   const [actiononroom, setactiononroom] = useState("sale");
   const [roomtype, setRoomType] = useState("1BHK");
 
-  function handleactiononroom(v) {
-    setactiononroom(v);
-  }
-
+  
   useEffect(
     function () {
       const flat_filteres = flats?.filter((flat) => {
@@ -21,6 +18,11 @@ function Flats({ flats, setSettingSetFilteredFlatss }) {
     },
     [flats, actiononroom, roomtype]
   );
+  function handleactiononroom(v) {
+    setactiononroom(v);
+  }
+
+
 
   return (
     <div className=" h-full md:w-7/12 py-1 w-full border  bg-stone-200 rounded-3xl overflow-y-auto custom-scrollbar mx-2 dark:bg-stone-800 border-transparent">
@@ -36,7 +38,8 @@ function Flats({ flats, setSettingSetFilteredFlatss }) {
       <FlatDisplay
         actiononroom={actiononroom}
         roomtype={roomtype}
-        flats_for_display={flats}
+        flats={flats}
+        
       />
     </div>
   );

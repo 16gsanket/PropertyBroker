@@ -5,14 +5,23 @@ import './scroll.css'
 
 
 
-function FlatDisplay({ filtered_flats }) {
-    console.log('csne drom the flatdisplay' , filtered_flats);
+function FlatDisplay({actiononroom , roomtype ,flats }) {
+
+    
+    const filtered_flats_for_display = flats?.filter(flat=>
+                
+        flat.roomFor === actiononroom && flat.roomType === roomtype) 
+    
+        console.log("filtered_flats_for_display ",filtered_flats_for_display)
 
     return (
 
         <div className="bg-transparent h-auto w-full px-2 py-2 flex flex-col gap-2 overflow-y-scroll custom-scrollbar">
             
-    {filtered_flats.map(flat=>{
+
+            {/* flat.roomFor === actiononroom && flat.roomType === roomtype  */}
+
+    {filtered_flats_for_display?.map(flat=>{
         return <Flat flat={flat}/>
     })  
     }

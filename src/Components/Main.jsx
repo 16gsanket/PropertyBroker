@@ -3,7 +3,7 @@ import Flats from "./Flats";
 import Maps from "./Maps";
 import { apiRooms } from "../services/apiRooms";
 import { useState } from "react";
-import { useState } from "react";
+
 
 function Main() {
   const {
@@ -21,6 +21,9 @@ function Main() {
     setFilteredFlats(v);
   }
 
+
+
+
   console.log("after filters ,", filteredFlats);
 
   return (
@@ -28,6 +31,7 @@ function Main() {
       <Flats
         flats={flats}
         setSettingSetFilteredFlatss={setSettingSetFilteredFlats}
+        
       />
       <Maps flats={flats} filteredFlats={filteredFlats} />
       {/* <Maps1 /> */}
