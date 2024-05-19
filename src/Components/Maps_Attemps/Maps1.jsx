@@ -10,7 +10,7 @@ import {
   useMapEvent,
 } from "react-leaflet";
 
-function Maps({ data }) {
+function Maps({ data, filteredFlats }) {
   const marker = [
     { geocode: [19.2183, 72.9781], popUp: "Hello i am pop 1" },
     { geocode: [19.001, 72.8397], popUp: "Hello i am pop 2" },
@@ -19,6 +19,11 @@ function Maps({ data }) {
 
   const customIcon = new Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/128/14624/14624716.png",
+    iconSize: [40, 40],
+  });
+
+  const CurrentCustomIcon = new Icon({
+    iconUrl: "./placeholder.png",
     iconSize: [38, 38],
   });
   /*
@@ -30,6 +35,15 @@ function Maps({ data }) {
   }*/
 
   const position = [19.076, 72.8777];
+
+  console.log("data is ", data);
+  console.log("filteredFlats is from Map1.jsx ", filteredFlats);
+
+  // const interectionArray = data.filter(element=>filteredFlats.includes(element))
+
+  const filteredFlatsIdArray = filteredFlats?.map(
+    (filteredFlat) => filteredFlat.id
+  );
 
   return (
     <div className="h-full w-full ">
@@ -45,14 +59,30 @@ function Maps({ data }) {
         />
 
         {/* enable this cluster marker to cluster up the icons .. */}
+
         {/*   <MarkerClusterGroup
           chunkedLoading
           //   iconCreateFunction={createCustomClusterIcon}
-        > */}
+        > 
+        */}
+
         {data?.map((data) => {
+          // const bl = filteredFlats.includes(data)
+          // console.log(b1)
+          const b1 = false;
+
           return (
-            <Marker position={data.geocode} icon={customIcon} key={data.id}>
-              <Popup><h3>{data.price}</h3></Popup>
+            <Marker
+              position={data.geocode}
+              icon={
+                filteredFlatsIdArray?.includes(data.id)
+                  ? customIcon
+                  : CurrentCustomIcon
+              }
+            >
+              <Popup>
+                <h3>{data.price}</h3>
+              </Popup>
             </Marker>
           );
         })}
