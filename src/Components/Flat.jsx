@@ -5,8 +5,11 @@ import { NavLink, useParams } from "react-router-dom";
 import Button from "./Button";
 
 function Flat({ flat }) {
+  console.log("flat from the Flat ", flat);
+ 
 
-  const {address , area,description , id , images , locality , parking , pincode , price , roomType , title , roomFor} = flat
+  
+const {address , area,description , id , images , locality , parking , pincode , price , roomType , title , roomFor} = flat
   const flat_id = flat.id;
 
   if(!flat){

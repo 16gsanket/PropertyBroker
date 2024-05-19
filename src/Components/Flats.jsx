@@ -10,20 +10,17 @@ function Flats({ flats, setSettingSetFilteredFlatss }) {
     setactiononroom(v);
   }
 
-  useEffect(function(){
-    const flat_filteres = flats?.filter(
-      (flat) => {
-        if( flat.roomFor === actiononroom && flat.roomType === roomtype){
-          return flat.id
-
+  useEffect(
+    function () {
+      const flat_filteres = flats?.filter((flat) => {
+        if (flat.roomFor === actiononroom && flat.roomType === roomtype) {
+          return flat.id;
         }
-       
-      }
-    );
-    setSettingSetFilteredFlatss(flat_filteres);
-
-  }, [flats, actiononroom, roomtype]);
-
+      });
+      setSettingSetFilteredFlatss(flat_filteres);
+    },
+    [flats, actiononroom, roomtype]
+  );
 
   return (
     <div className=" h-full md:w-7/12 py-1 w-full border  bg-stone-200 rounded-3xl overflow-y-auto custom-scrollbar mx-2 dark:bg-stone-800 border-transparent">
