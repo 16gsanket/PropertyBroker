@@ -4,7 +4,6 @@ import Maps from "./Maps";
 import { apiRooms } from "../services/apiRooms";
 import { useState } from "react";
 
-
 function Main() {
   const {
     data: flats,
@@ -21,17 +20,13 @@ function Main() {
     setFilteredFlats(v);
   }
 
-
-
-
   // console.log("after filters ,", filteredFlats);
 
   return (
-    <div className="h-screen w-11/12  mx-auto rounded-3xl relative sm:top-[-8rem] top-[-9rem] flex justify-around">
+    <div className="h-screen w-11/12  mx-auto rounded-3xl relative sm:top-[-10rem] md:top-[-10rem] top-[-15rem] flex justify-around ">
       <Flats
         flats={flats}
         setSettingSetFilteredFlatss={setSettingSetFilteredFlats}
-        
       />
       <Maps flats={flats} filteredFlats={filteredFlats} />
       {/* <Maps1 /> */}

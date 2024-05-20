@@ -77,10 +77,12 @@ function Maps({ data, filteredFlats }) {
             >
               <Popup >
                 <NavLink to={`/flat/${data.id}`}>
+                
 
-                <h3 className="text-indigo-600 underline-offset-2">{data.title}</h3>
+                <h3 className="text-indigo-600 underline underline-offset-2 hover:text-indigo-700">{data.title}</h3>
                 <h3 className="text-stone-600">Location: {data.locality}</h3>
                 <h3 className="text-stone-500">Price: ₹{data.price}</h3>
+                
                 </NavLink>
               </Popup>
             </Marker>
