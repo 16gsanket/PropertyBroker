@@ -9,6 +9,7 @@ import {
   useMap,
   useMapEvent,
 } from "react-leaflet";
+import { NavLink } from "react-router-dom";
 
 function Maps({ data, filteredFlats }) {
   const marker = [
@@ -36,10 +37,7 @@ function Maps({ data, filteredFlats }) {
 
   const position = [19.076, 72.8777];
 
-  // console.log("data is ", data);
-  // console.log("filteredFlats is from Map1.jsx ", filteredFlats);
-
-  // const interectionArray = data.filter(element=>filteredFlats.includes(element))
+  
 
   const filteredFlatsIdArray = filteredFlats?.map(
     (filteredFlat) => filteredFlat.id
@@ -67,9 +65,6 @@ function Maps({ data, filteredFlats }) {
         */}
 
         {data?.map((data) => {
-          // const bl = filteredFlats.includes(data)
-          // console.log(b1)
-          const b1 = false;
 
           return (
             <Marker
@@ -80,8 +75,13 @@ function Maps({ data, filteredFlats }) {
                   : CurrentCustomIcon
               }
             >
-              <Popup>
-                <h3>{data.price}</h3>
+              <Popup >
+                <NavLink to={`/flat/${data.id}`}>
+
+                <h3 className="text-indigo-600 underline-offset-2">{data.title}</h3>
+                <h3 className="text-stone-600">Location: {data.locality}</h3>
+                <h3 className="text-stone-500">Price: ₹{data.price}</h3>
+                </NavLink>
               </Popup>
             </Marker>
           );
