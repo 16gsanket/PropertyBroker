@@ -22,7 +22,22 @@ const { data, error } = await supabase
       console.log(error)
       throw new Error("Cannot Add the Flat");
     } 
+}
 
+export async function getSingleFlatDetails(id){
+  console.log('i am inside the getSingleFlatDetails function');
+
+  const { data, error } = await supabase
+  .from('Rooms')
+  .select('*')
+  .eq('id',id)
+  .single()
+
+  if(error){
+    console.log(error)
+    throw new Error("Cannot find the single Flat");
+  }
+  return data;
 }
 
 

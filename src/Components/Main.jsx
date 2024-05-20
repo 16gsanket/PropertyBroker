@@ -24,7 +24,7 @@ function Main() {
 
 
 
-  console.log("after filters ,", filteredFlats);
+  // console.log("after filters ,", filteredFlats);
 
   return (
     <div className="h-screen w-11/12  mx-auto rounded-3xl relative sm:top-[-8rem] top-[-9rem] flex justify-around">

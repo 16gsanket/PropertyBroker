@@ -12,7 +12,7 @@ function FlatDisplay({actiononroom , roomtype ,flats }) {
                 
         flat.roomFor === actiononroom && flat.roomType === roomtype) 
     
-        console.log("filtered_flats_for_display ",filtered_flats_for_display)
+        // console.log("filtered_flats_for_display ",filtered_flats_for_display)
 
     return (
 

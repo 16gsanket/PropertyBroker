@@ -5,7 +5,7 @@ import { NavLink, useParams } from "react-router-dom";
 import Button from "./Button";
 
 function Flat({ flat }) {
-  console.log("flat from the Flat ", flat);
+ 
  
 
   
@@ -25,7 +25,7 @@ const {address , area,description , id , images , locality , parking , pincode ,
  
   return (
      
-    <NavLink to={`/flat/${flat.id}`}>
+    <NavLink to={`/flat/${flat.id}`} >
 
    
     <div className="h-fit w-full bg-stone-50  flex align-middle justify-center items-center rounded-3xl overflow-hidden px-2 py-2 dark:bg-stone-950">

@@ -36,8 +36,8 @@ function Maps({ data, filteredFlats }) {
 
   const position = [19.076, 72.8777];
 
-  console.log("data is ", data);
-  console.log("filteredFlats is from Map1.jsx ", filteredFlats);
+  // console.log("data is ", data);
+  // console.log("filteredFlats is from Map1.jsx ", filteredFlats);
 
   // const interectionArray = data.filter(element=>filteredFlats.includes(element))
 
